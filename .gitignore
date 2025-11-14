@@ -5,6 +5,8 @@
 # Composer dependencies
 /public/
 /vendor/
+/storage/
+bootstrap
 composer.lock
 
 # Node dependencies
@@ -77,3 +79,13 @@ Homestead.json
 *.swp
 *.bak
 *.tmp
+
+
+# Laravel debugbar
+/debugbar
+
+# Node.js specific
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
