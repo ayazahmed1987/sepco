@@ -1,43 +1,43 @@
 # =========================================
-# Laravel 12 - Full Git Ignore
+# Laravel 12 - Safe & Correct Git Ignore
 # =========================================
 
 # Composer dependencies
-/public/
 /vendor/
-/storage/
-bootstrap
-composer.lock
 
 # Node dependencies
 /node_modules/
-npm-debug.log
-yarn-error.log
-pnpm-debug.log
 
-# Laravel generated files
-/public/hot
-/public/storage
-/storage/*.key
-/storage/app/public/*
-/storage/framework/cache/data/*
-/storage/framework/sessions/*
-/storage/framework/views/*
-/storage/framework/testing/*
-/storage/logs/*
-/bootstrap/cache/*.php
-/.env
+# Laravel storage (but keep folder structure)
+storage/*.key
+storage/app/public/*
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+storage/framework/testing/*
+
+# Laravel bootstrap cache (but keep folder)
+bootstrap/cache/*.php
+
+# Environment files
+.env
 .env.*
 .env.backup
+.env.local
+
+# Public build outputs (everything else should stay!)
+public/build/
+public/hot
+public/storage
+public/mix-manifest.json
+public/js/*.map
+public/css/*.map
 
 # Logs & debug files
 *.log
 *.cache
 php_errors.log
-
-# OS junk
-.DS_Store
-Thumbs.db
 
 # IDE / Editor files
 .idea/
@@ -45,26 +45,18 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
-# PHPUnit / Pest
+# OS junk
+.DS_Store
+Thumbs.db
+
+# PHPUnit cache
 .phpunit.result.cache
 
-# Database backup files
+# DB backups
 *.sql
 *.sqlite
 
-# Build Output
-/public/build/
-/public/mix-manifest.json
-/public/js/*.map
-/public/css/*.map
-
-# Env files
-.env
-.env.* 
-.env.backup
-.env.local
-
-# Zip / Archives / Big Media (avoid huge files in git)
+# Archives / large files
 *.zip
 *.rar
 *.7z
@@ -75,17 +67,10 @@ Thumbs.db
 homestead.yaml
 Homestead.json
 
-# Misc
+# Misc temp files
 *.swp
 *.bak
 *.tmp
 
-
-# Laravel debugbar
+# Laravel Debugbar
 /debugbar
-
-# Node.js specific
-npm-debug.log
-yarn-error.log
-package-lock.json
-yarn.lock
