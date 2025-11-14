@@ -9,20 +9,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: 📂 Sync files via FTP
+      - name: 📂 Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER_STAGING }}
           username: ${{ secrets.FTP_USERNAME_STAGING }}
           password: ${{ secrets.FTP_PASSWORD_STAGING }}
+          port: 21
+          server-dir: ${{ secrets.STAGING_FTP_PATH }}
+          protocol: ftp
+          exclude: |
+            public/**
+            **/public/**
 
-      - name: ✅ SSH into Server & Deploy Laravel
+      - name: 🚀 Run Laravel commands on server
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.FTP_SERVER_STAGING }}
+          host: ${{ secrets.SSH_SERVER_IP }}
           username: ${{ secrets.SSH_USER_STAGING }}
           key: ${{ secrets.DEPLOY_SERVER_KEY_STAGING }}
           port: 3117
