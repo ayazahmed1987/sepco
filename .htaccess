@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+
+    # Skip existing files/folders
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    
+     #RewriteRule ^(\.env|artisan|server\.php|composer\.(json|lock)|package\.json|webpack\.mix\.js|phpunit\.xml|.gitignore|.git)(.*)?$ - [F,L]
+
+    # Block Access to Sensitive Directories (KEEP VENDOR BLOCKED IF IT'S AT THE ROOT)
+    #RewriteRule ^(storage|bootstrap|node_modules|tests|database|resources|config|routes)(/.*)?$ - [F,L]
+
+    # Send everything to index.php
+    RewriteRule ^ index.php [L]
+</IfModule>

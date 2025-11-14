@@ -1,0 +1,78 @@
+# =========================================
+# Laravel 12 - Full Git Ignore
+# =========================================
+
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Node dependencies
+/node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Laravel generated files
+/public/hot
+/public/storage
+/storage/*.key
+/storage/app/public/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/testing/*
+/storage/logs/*
+/bootstrap/cache/*.php
+/.env
+.env.*
+.env.backup
+
+# Logs & debug files
+*.log
+*.cache
+php_errors.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# PHPUnit / Pest
+.phpunit.result.cache
+
+# Database backup files
+*.sql
+*.sqlite
+
+# Build Output
+/public/build/
+/public/mix-manifest.json
+/public/js/*.map
+/public/css/*.map
+
+# Env files
+.env
+.env.* 
+.env.backup
+.env.local
+
+# Zip / Archives / Big Media (avoid huge files in git)
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Local tools
+homestead.yaml
+Homestead.json
+
+# Misc
+*.swp
+*.bak
+*.tmp

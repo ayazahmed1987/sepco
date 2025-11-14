@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+
+class FinalEvaluation extends Model
+{
+    protected $fillable = ['tender_id', 'published_date', 'po_issuance_date', 'file'];
+
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('published_date', '>', now()->subDays(15)->toDateString());
+    }
+
+    public function scopeArchived(Builder $query): Builder
+    {
+        return $query->where('published_date', '<=', now()->subDays(15)->toDateString());
+    }
+
+    public function tender()
+    {
+        return $this->belongsTo(Tender::class);
+    }
+}
