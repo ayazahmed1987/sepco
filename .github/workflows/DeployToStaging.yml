@@ -25,8 +25,19 @@ jobs:
           host: ${{ secrets.FTP_SERVER_STAGING }}
           username: ${{ secrets.SSH_USER_STAGING }}
           key: ${{ secrets.DEPLOY_SERVER_KEY_STAGING }}
-          port: 21
+          port: 3117
           script: |
+            echo "=== SSH Connected ==="
+            echo "Current directory:"
+            pwd
+            ls -la
+
+            echo "=== Switching to deployment directory ==="
             cd ${{ secrets.SSH_DIR_STAGING }}
+
+            echo "Directory after cd:"
+            pwd
+            ls -la
+
             composer install --no-dev --optimize-autoloader --no-interaction
             php artisan optimize:clear
