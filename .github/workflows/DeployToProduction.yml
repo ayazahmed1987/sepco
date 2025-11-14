@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER_PRODUCTION }}
+          username: ${{ secrets.FTP_USERNAME_PRODUCTION }}
+          password: ${{ secrets.FTP_PASSWORD_PRODUCTION }}
+
+      - name: ✅ SSH into Server & Deploy Laravel
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.FTP_SERVER_PRODUCTION }}
+          username: ${{ secrets.SSH_USER_PRODUCTION }}
+          key: ${{ secrets.DEPLOY_SERVER_KEY_PRODUCTION }}
+          port: 3117
+          script: |
+            cd ${{ secrets.SSH_DIR_PRODUCTION }}
+            composer install --no-dev --optimize-autoloader --no-interaction
+            php artisan optimize:clear
