@@ -79,7 +79,7 @@
                         </div>
 						@endif
                         <div class="contact-info">
-                            <h2>Contact Info Test 14-11-2025</h2>
+                            <h2>Contact Info Test 14-11-2025 2025</h2>
                             <ul class="list-style-one">
                                 @if(!empty($setting->phone))<li><i class="bi bi-phone"></i>{{ $setting->phone }}</li>@endif
                                 @if(!empty($setting->email))<li><i class="bi bi-envelope"></i>{{ $setting->email }}</li>@endif
