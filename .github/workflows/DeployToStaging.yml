@@ -5,39 +5,22 @@ on:
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy to Staging
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files via FTP
+      - name: 🧪 Create test file
+        run: echo "UPLOAD TEST FILE" > test.txt
+
+      - name: 📂 Upload via FTP (DEBUG)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER_STAGING }}
           username: ${{ secrets.FTP_USERNAME_STAGING }}
           password: ${{ secrets.FTP_PASSWORD_STAGING }}
-
-      - name: ✅ SSH into Server & Deploy Laravel
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.FTP_SERVER_STAGING }}
-          username: ${{ secrets.SSH_USER_STAGING }}
-          key: ${{ secrets.DEPLOY_SERVER_KEY_STAGING }}
-          port: 3117
-          script: |
-            echo "=== SSH Connected ==="
-            echo "Current directory:"
-            pwd
-            ls -la
-
-            echo "=== Switching to deployment directory ==="
-            cd ${{ secrets.SSH_DIR_STAGING }}
-
-            echo "Directory after cd:"
-            pwd
-            ls -la
-
-            #composer install --no-dev --optimize-autoloader --no-interaction
-            #php artisan optimize:clear
+          port: 21
+          protocol: ftp
+          server-dir: ${{ secrets.STAGING_FTP_PATH }}
+          log-level: verbose
