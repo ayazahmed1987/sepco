@@ -39,5 +39,5 @@ jobs:
             pwd
             ls -la
 
-            composer install --no-dev --optimize-autoloader --no-interaction
-            php artisan optimize:clear
+            #composer install --no-dev --optimize-autoloader --no-interaction
+            #php artisan optimize:clear
