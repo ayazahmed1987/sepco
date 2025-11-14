@@ -3,6 +3,7 @@
 # =========================================
 
 # Composer dependencies
+/public/
 /vendor/
 composer.lock
 
