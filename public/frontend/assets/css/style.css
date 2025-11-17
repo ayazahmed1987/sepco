@@ -8378,10 +8378,11 @@ section.blog_area.style_sixs .meta-blog p span {
     content: "'";
     left: 0;
     top: 0;
+    opacity: 0.5;
     width: 100%;
-    height: 400px;
-    background: #F4F8F9;
-    z-index: -1;
+    height: 100%;
+    background: #09162f;
+    z-index: 1;
 }
 
 .breadcumb-title h4 {
