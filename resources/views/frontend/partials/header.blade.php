@@ -1,5 +1,7 @@
+@if (is_homepage())
 @if(isset($renderedCustomposts['schedules']))
 {!! $renderedCustomposts['schedules'] !!}
+@endif
 @endif
 
 <!-- START HEADER AREA -->

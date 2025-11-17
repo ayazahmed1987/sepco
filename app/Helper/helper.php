@@ -7,12 +7,13 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 
 
-
-
-
-
-
-
+if(!function_exists('is_homepage'))
+{
+    function is_homepage()
+    {
+        return request()->is('/') || request()->routeIs('website.index');
+    }
+}
 if(!function_exists('pages_count_admin'))
 {
     function pages_count_admin()
