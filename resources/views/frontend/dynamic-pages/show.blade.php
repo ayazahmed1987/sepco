@@ -24,6 +24,9 @@
 </div>
 @endif
 @if(isset($page->description))
+@php $desc = trim($page->description ?? ''); @endphp
+@if ($desc === '' || $desc === '.' || $desc === 'no' || $desc === 'null'|| $desc === 'none')
+@else
 <section class="py-5">
 	<div class="container">
 		<div class="row">
@@ -35,6 +38,7 @@
 		</div>
 	</div>
 </section>
+@endif
 @endif
 
 
