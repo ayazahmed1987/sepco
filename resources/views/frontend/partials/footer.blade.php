@@ -84,7 +84,7 @@
 				</form>
 				--}}
 			</div>
-			<div class="col-lg-1"></div>
+			
 			<div class="col-lg-2 col-md-6">
 				<div class="footer-widget-content">
 					<div class="footer-widget-title">
@@ -104,7 +104,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-2 col-md-6">
+			<div class="col-lg-3 col-md-6">
 				<div class="footer-widget-content">
 					<div class="footer-widget-title">
 						<h4>Our Services</h4>
