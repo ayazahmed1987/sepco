@@ -55,7 +55,7 @@
                     </form>
                 </div>
                 <div id="loader" class="text-center d-none">
-                    <img src="{{ asset('frontend/assets/images/pspc-logo.png') }}" alt="PSPC Logo"
+                    <img src="{{ asset('frontend/assets/images/sepco-logo.png') }}" alt="SEPCO Logo"
                         style="width: 100px; margin: 20px;">
                     <div class="spinner-border text-primary" role="status">
                         <span class="sr-only">Loading...</span>
