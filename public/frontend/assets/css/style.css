@@ -8771,6 +8771,7 @@ section.portfolio_details {
     position: relative;
     padding: 42px 0 0 50px;
     border-radius: 20px;
+    z-index: 1;
 }
 
 .port_details_content {
