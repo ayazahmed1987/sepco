@@ -168,7 +168,7 @@
         }
 
         .bgc-purple {
-            background-color: #594ca6 !important;
+            background-color: #e22e3a !important;
         }
 
         .bid-evaluation-badge.bgc-orange {
