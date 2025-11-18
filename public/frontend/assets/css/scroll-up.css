@@ -31,7 +31,7 @@
     text-align: center;
     line-height: 46px;
     font-size: 18px;
-    color: #366B2A;
+    color: #e81123;
     left: 0;
     top: 0;
     height: 46px;
@@ -65,7 +65,7 @@
   transition: all 200ms linear !important;
 }
 .prgoress_indicator:hover ::after {
-  color: #366B2A;
+  color: #e81123;
 }
 .prgoress_indicator:hover ::before {
   opacity: 1;
@@ -74,7 +74,7 @@
   fill: none;
 }
 .prgoress_indicator svg.progress-circle path {
-  stroke:#366B2A;
+  stroke:#e81123;
   stroke-width: 4;
   box-sizing: border-box;
   transition: all 200ms linear !important;
