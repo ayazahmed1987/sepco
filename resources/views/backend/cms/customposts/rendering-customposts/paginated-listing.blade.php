@@ -2,7 +2,9 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
-                                <th>Table Name</th>
+                                <th>Title</th>
+								<th>Assign To Pages</th>
+                                <th>Post Count</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -11,7 +13,9 @@
                             @forelse  ($customposts as $key => $custompost)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $custompost->table_name }}</td>
+                                    <td>{{ $custompost->title }}</td>
+									<td>{{ $custompost->getpages->pluck('title')->implode(', ') ?: 'No Pages Assigned' }}</td>
+                                    <td>{{ $custompost->custompostdata->count(); }}</td>
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox" class="status-switch" data-id="{{ $custompost->id }}"
