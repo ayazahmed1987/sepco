@@ -78,14 +78,14 @@
         }
 
         a.btn.btn-primary.btn-color {
-            border: 1px solid #1d6a3e !important;
-            background: #1d6a3e17;
+            border: 1px solid #0E2458 !important;
+            background: #0E245817;
             color: #000000;
         }
 
         a.btn.btn-primary.btn-color:hover {
 
-            background: #1d6a3e;
+            background: #0E2458;
             color: #ffffff;
         }
 
@@ -102,7 +102,7 @@
         }
 
         .tender-icon {
-            background: linear-gradient(135deg, #594CA6, #3A2E66);
+            background: linear-gradient(135deg, #2c5aa0, #0E2458);
             color: white;
             width: 145px;
             padding: 9px 15px 0 15px;
@@ -115,7 +115,7 @@
         }
 
         .bid-evaluation-badge {
-            background: #1d6a3e;
+            background: #0E2458;
             color: white;
             padding: 5px 12px;
             border-radius: 3px;
@@ -145,8 +145,8 @@
         }
 
         .view-detail-btn {
-            border: 1px solid #1d6a3e !important;
-            background: #1d6a3e17;
+            border: 1px solid #0E2458 !important;
+            background: #0E245817;
             color: #000000;
             padding: 8px 20px;
             border-radius: 4px;
@@ -157,7 +157,7 @@
         }
 
         .view-detail-btn:hover {
-            background: #1d6a3e;
+            background: #0E2458;
             color: rgb(255, 255, 255);
         }
 
